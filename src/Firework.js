@@ -45,7 +45,6 @@ export default class Firework {
 				uSize: { value: 3 },
 				uProgress: { value: 0 },
 				uTime: { value: 0 },
-				uStartTime: { value: 0 },
 				uExpireIn: { value: this.expireIn },
 			},
 			fragmentShader: fragment,
@@ -68,9 +67,8 @@ export default class Firework {
 		this.material.uniforms.uTime.value += dt
 	}
 
-	born(time) {
-		this.material.uniforms.uStartTime.value = time
-		this.material.uniforms.uTime.value = time
+	born() {
+		this.material.uniforms.uTime.value = 0
 
 		gsap.fromTo(
 			this.material.uniforms.uProgress,
