@@ -1,15 +1,13 @@
-# Three.js + Vite starter kit
+# Three.js Fireworks
 
-This repo is a starting point for every three.js project. 
+This repo contains an example of how to createa firework with a particles system and custom shaders.
 
-It include a basic scene with a cube, perspective camera, orbit controls and GUI.
+It includes Firework class.
 
 [Learn three.js on my You Tube channel](https://www.youtube.com/@gianlucalomarco)
 
-![Screenshot 2023-09-15 alle 23 54 57](https://github.com/rock-biter/threejs-starter/assets/74297920/bfc93a26-8606-4c47-8601-f1a106d00f0d)
-
-
 ## Installation
+
 Install the dependencies
 
 ```bash
@@ -20,11 +18,32 @@ npm install
 
 ```bash
 npm run dev
-````
+```
 
 ## Build
+
 ```bash
 npm run build
+```
+
+## Add a firework
+
+```
+let clock = new THREE.Clock();
+
+let time = clock.getElapsedTime();
+
+const firework = new Firework(300,3,time);
+
+...
+
+function tic() {
+
+  time = clock.getElapsedTime();
+
+  firework.material.uniforms.uTime.value = time;
+}
+
 ```
 
 ## License
