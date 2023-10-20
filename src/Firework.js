@@ -46,6 +46,7 @@ export default class Firework {
 				uProgress: { value: 0 },
 				uTime: { value: 0 },
 				uExpireIn: { value: this.expireIn },
+				uColor: { value: new Vector3().random() },
 			},
 			fragmentShader: fragment,
 			vertexShader: vertex,
