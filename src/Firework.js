@@ -64,8 +64,13 @@ export default class Firework {
 		this.geometry.dispose()
 	}
 
+	update(dt) {
+		this.material.uniforms.uTime.value += dt
+	}
+
 	born(time) {
 		this.material.uniforms.uStartTime.value = time
+		this.material.uniforms.uTime.value = time
 
 		gsap.fromTo(
 			this.material.uniforms.uProgress,

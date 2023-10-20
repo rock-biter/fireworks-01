@@ -39,9 +39,9 @@ const firework = new Firework(300,3,time);
 
 function tic() {
 
-  time = clock.getElapsedTime();
+  let dt = clock.getDelta();
 
-  firework.material.uniforms.uTime.value = time;
+  firework.update(dt);
 }
 
 ```

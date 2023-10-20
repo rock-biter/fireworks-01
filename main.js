@@ -102,13 +102,15 @@ function tic() {
 	/**
 	 * tempo trascorso dal frame precedente
 	 */
-	// const deltaTime = clock.getDelta()
+	const deltaTime = clock.getDelta()
 	/**
 	 * tempo totale trascorso dall'inizio
 	 */
 	const time = clock.getElapsedTime()
+	// console.log(time, deltaTime)
 
-	fireworks.forEach(({ material }) => (material.uniforms.uTime.value = time))
+	// fireworks.forEach(({ material }) => (material.uniforms.uTime.value = time))
+	fireworks.forEach((f) => f.update(deltaTime))
 
 	controls.update()
 
