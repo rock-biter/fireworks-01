@@ -29,13 +29,12 @@ npm run build
 ## Add a firework
 
 ```
-let clock = new THREE.Clock();
 
-let time = clock.getElapsedTime();
-
-const firework = new Firework(300,3,time);
+const firework = new Firework(300,3);
 
 ...
+
+let clock = new THREE.Clock();
 
 function tic() {
 

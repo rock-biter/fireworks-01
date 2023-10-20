@@ -25,7 +25,7 @@ const scene = new THREE.Scene()
 
 window.addEventListener('click', () => {
 	// firework.mesh.rotation.setFromVector3(new THREE.Vector3().random())
-	const firework = new Firework(100, 3, clock.getElapsedTime())
+	const firework = new Firework(100, 3)
 	scene.add(firework.mesh)
 	fireworks.push(firework)
 	// firework.material.uniforms.uStartTime.value = clock.getElapsedTime()
